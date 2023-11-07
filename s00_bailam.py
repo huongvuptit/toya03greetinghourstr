@@ -11,7 +11,7 @@ greeting(hour_str)
 02a tao github repo, mo trinhduyetweb de kiemtra tep s00_bailam.py, va lay diachi/url aka githubbailamurl
 
 02b dán diachi githubbailamurl theo mẫu ở trang web duoiday
-    https://forms.gle/mb6ZrFw4pXW8DqeBA
+    https://forms.gle/db1aH7ArPWnAi59x9
 
 --- debai / problem
 Viết hàm 
