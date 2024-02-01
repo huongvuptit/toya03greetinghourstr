@@ -46,13 +46,48 @@ greeting('21:00')            | Good evening!          | 13
 greeting('2100')             | Good evening!          | 14
 
 """
+
 #endregion debai
+
 
 #region bailam
 def greeting(hour_str):
-  return 'todo n'
-  
+  is24hFormat = True
+  hour = 0
+  #minute = 0
 
-if __name__=='__main__':
+  hour_str_formated = hour_str.replace(':', '').replace(' ', '')
+  am_pm = hour_str_formated[-2:].lower()
+
+  if am_pm == 'am' or am_pm == 'pm':
+    is24hFormat = False
+    hour_str_formated = hour_str_formated[:-2]
+
+  if len(hour_str_formated) <= 2:
+    hour = int(hour_str_formated)
+  elif len(hour_str_formated) == 3:
+    hour = int(hour_str_formated[0])
+    #minute = int(hour_str_formated[1:2])
+  elif len(hour_str_formated) >= 4:
+    hour = int(hour_str_formated[:2])
+    #minute = int(hour_str_formated[2:])
+
+  if (is24hFormat is False) and (am_pm == 'pm'):
+    hour += 12
+
+  welcome_str = ''
+  if (hour >= 0 and hour < 12):
+    welcome_str = 'Good morning!'
+  elif hour < 18:
+    welcome_str = 'Good afternoon!'
+  elif hour < 24:
+    welcome_str = 'Good evening!'
+  else:
+    welcome_str = 'Error input'
+
+  return welcome_str
+
+
+if __name__ == '__main__':
   pass
 #endregion bailam
